@@ -108,7 +108,7 @@ No.
 ----------
 
 #### **ERP de Oracle (Oracle ERP Cloud)**
-
+![Oracle ERP](https://www.oracle.com/a/ocom/img/social-og-erp-logo-1200x628.jpg)
 ##### Características:
 
 -   Basado en la nube.
@@ -137,7 +137,7 @@ No.
 ----------
 
 #### **ERP de Microsoft (Microsoft Dynamics 365)**
-
+![Dynamics 365](https://www.cic.es/wp-content/uploads/2020/06/dynamics-365-logo.png)
 ##### Características:
 
 -   Solución basada en la nube.
@@ -166,7 +166,7 @@ No.
 ----------
 
 #### **ERP Openbravo**
-
+![Openbravo](https://www.openbravo.com/wp-content/uploads/2018/08/Openbravo_logo_TRANS3.png)
 ##### Características:
 
 -   Solución orientada a la nube.
@@ -174,7 +174,7 @@ No.
 -   Enfocado en la retail.
 
 ##### Año de creación:
-
+2006
 ##### Ventajas:
 
 -   Flexibilidad y adaptabilidad.
@@ -192,7 +192,7 @@ Sí, aunque tiene versiones comerciales.
 ----------
 
 #### **ERP Odoo (anteriormente OpenERP)**
-
+![Odoo](https://nanobytes.es/web/image/98563-d591b4c3/logo%20odoo.png)
 ##### Características:
 
 -   Suite de aplicaciones de negocios.
@@ -200,7 +200,7 @@ Sí, aunque tiene versiones comerciales.
 -   Orientado a la usabilidad y la integración.
 
 ##### Año de creación:
-2005 (como  OpenERP, a partir de 2014 como Odoo).
+2005 (como  OpenERP; a partir de 2014 como Odoo).
 
 ##### Ventajas:
 
@@ -246,6 +246,4 @@ La arquitectura de estos sistemas puede ser:
 - **Modular**: Diferentes módulos interconectados para distintas áreas.
 - **Basada en la nube**: Servicios ofrecidos a través de internet.
 
----
-
-Espero que esta lección te sea útil para tu ciclo de grado superior. Si necesitas expandir o detallar algún punto, no dudes en pedirlo. ¡Buena suerte!
+![Odoo](https://caredesk.es/wp-content/uploads/2023/03/Logo-Odoo_solution-odoo-features.png)
