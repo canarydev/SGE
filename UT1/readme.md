@@ -16,20 +16,21 @@ Las empresas pueden clasificarse de diversas maneras:
 ## 3. Organigramas
 
 Un **organigrama** es una representación gráfica de la estructura de una organización. Muestra cómo se distribuyen los diferentes puestos, departamentos y su relación jerárquica. Existen diversos tipos: vertical, horizontal, matricial, entre otros.
-> Organigrama vertical o funcional.
+
+##### Organigrama vertical o funcional:
 ![Organigrama vertical o funcional](https://edem.eu/wp-content/uploads/2022/10/organigrama-vertical-funcional.jpg)
 
-> Organigrama horizontal.
+##### Organigrama horizontal:
 ![Organigrama horizontal](https://edem.eu/wp-content/uploads/2022/10/organigrama-horizontal.jpg)
 
-> Organigrama mixto.
+##### Organigrama mixto:
 ![Organigrama mixto](https://edem.eu/wp-content/uploads/2022/10/organigrama-mixto.jpg)
 
-> Organigrama circular.
+##### Organigrama circular:
 ![Organigrama circular](https://edem.eu/wp-content/uploads/2022/10/organigrama-circular.jpg)
 
-> Organigrama equipo directivo Telefónica. Fuente: [Forbes](https://forbes.es/empresas/116304/asi-queda-el-organigrama-de-telefonica/).
-![enter image description here](https://forbes.es/wp-content/uploads/2021/09/organigrama-telefonica-2021-592x675.jpeg)
+##### Organigrama equipo directivo Telefónica. Fuente: [Forbes](https://forbes.es/empresas/116304/asi-queda-el-organigrama-de-telefonica/):
+![Organigrama Telefónica](https://forbes.es/wp-content/uploads/2021/09/organigrama-telefonica-2021-592x675.jpeg)
 
 
 ## 4. Objetivos empresariales
@@ -56,7 +57,7 @@ Las empresas y sus empleados tienen diversas necesidades:
 - **Tecnológicas**: Infraestructura, software, innovación.
 - **De mercado**: Investigación, posicionamiento, estrategias de marketing.
 
-> Pirámide de Maslow.
+##### Pirámide de Maslow:
 ![enter image description here](https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Pir%C3%A1mide_de_Maslow.svg/800px-Pir%C3%A1mide_de_Maslow.svg.png)
 
 ## 7. Sistemas de gestión empresarial
@@ -73,7 +74,7 @@ No todas las compañías son iguales, por lo que no todas las soluciones lo ser�
 
 Actualmente el ERP integra todos los procesos internos y externos de la gestión, cubriendo las necesidades de la pequeña (PYME) y gran empresa en productos unificados.
 
->Organigrama de un ERP cualquiera
+##### Organigrama de un ERP cualquiera:
 ![enter image description here](https://codeplus.es/wp-content/uploads/2019/07/erp-software.jpg)
 
 #### 7.1.1 Revisión de los ERP actuales
