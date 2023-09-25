@@ -33,3 +33,6 @@ docker run -d -v odoo:/var/lib/odoo -v extra-addons:/mnt/extra-addons -p 8069:80
 ```
 docker run -d -v odoo:/var/lib/odoo -v extra-addons:/mnt/extra-addons -p 8069:8069 --name odoo16 --link db:db -t odoo:16
 ```
+
+## :warning: Si tienes problemas con Windows Subsystem for Linux :warning:...
+Descarga [WSL Update](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi) e instálalo, debería dar resultado.
