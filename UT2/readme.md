@@ -1,10 +1,7 @@
 # Instalación del SGE
 
-## Instalar Docker-Compose
-```
-sudo curl -L "https://github.com/docker/compose/releases/download/v2.22.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-```
+## Instalar Docker (Windows)
+[Descarga Docker](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe) e instálalo.
 
 ## Instalar Portainer
 ```
@@ -34,7 +31,7 @@ docker run -d -v odoo:/var/lib/odoo -v extra-addons:/mnt/extra-addons -p 8069:80
 docker run -d -v odoo:/var/lib/odoo -v extra-addons:/mnt/extra-addons -p 8069:8069 --name odoo16 --link db:db -t odoo:16
 ```
 
-## :warning: Si tienes problemas con Windows Subsystem for Linux :warning:...
-Descarga [WSL Update](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi) e instálalo, debería dar resultado.
+## :warning: Si tienes problemas al instalar Docker :warning:...
+Es probable que el problema se deba a Windows Subsystem for Linux. Descarga [WSL Update](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi) e instálalo, debería dar resultado.
 
 En caso de usar una máquina de arquitectura arm64, descarga [WSL Update para arm64](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_arm64.msi).
