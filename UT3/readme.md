@@ -1,0 +1,29 @@
+# Configuración y administración de sistemas ERP-CRM
+
+Tras completar la instalación de Docker y los contenedores de postgreSQL, pgAdmin4 y Odoo, es esencial avanzar con la configuración del sistema.
+
+## 1. Configuración de pgAdmin4
+
+1. **Inicio de pgAdmin4**: Lanza la herramienta pgAdmin4 e ingresa con las credenciales (usuario y contraseña) que estableciste durante el proceso de instalación del contenedor.
+
+2. **Registro de un Nuevo Servidor**: Dentro de la interfaz de pgAdmin4, procede a registrar un nuevo servidor. Puedes seguir el proceso visualmente en la siguiente imagen:
+
+   ![Instrucciones para registrar en pgAdmin4](https://github.com/canarydev/SGE_23-24/blob/main/assets/images/pgAdmin4.gif?raw=true)
+
+Con estos pasos, habrás configurado con éxito tu base de datos en el entorno Docker con postgreSQL, pgAdmin4 y Odoo.
+
+## 2. Creación de la base de datos en Odoo
+
+Una vez que hayas configurado pgAdmin4, estarás listo para proceder con la creación de una base de datos en Odoo. A continuación, te guiaré paso a paso:
+
+1. **Acceso a la interfaz de Odoo**: Desde tu navegador favorito, accede a la URL `localhost:8069/web/database/manager`. Esta es la plataforma de gestión de bases de datos específica de Odoo.
+
+2. **Inicia la creación**: Busca y haz clic en el botón `Create Database`. Al hacerlo, se abrirá una ventana emergente con un formulario para proporcionar los detalles de tu nueva base de datos.
+
+3. **Rellena el formulario**: Asegúrate de completar los campos necesarios. Es importante recordar la "master-password", ya que te permitirá administrar la base de datos en el futuro. Una vez completado, envía el formulario con un solo clic. Evita hacer múltiples clics para prevenir errores.
+
+4. **Finalización y acceso a módulos**: Al finalizar el proceso de creación, serás redirigido a la pantalla principal de Odoo, donde verás los módulos disponibles. Si deseas visualizar este proceso paso a paso, consulta la siguiente imagen:
+
+   ![Proceso de creación de base de datos en Odoo](https://github.com/canarydev/SGE_23-24/blob/main/assets/images/odoo_create_database.gif?raw=true)
+
+Con estos sencillos pasos, habrás establecido una base de datos en Odoo y estarás listo para comenzar a trabajar con el sistema.
