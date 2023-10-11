@@ -19,6 +19,7 @@ Nota: Cada modelo debe tener dos variantes: normal y TI.
 - 🧠 Microprocesador (x3 modelos diferentes).
 - 💾 Almacenamiento secundario (SSD, NVME o HDD. Debe haber al menos uno de cada tipo).
 - 🌐 Memoria RAM (x3 modelos diferentes).
+  
 Añade detalles como precio, impuestos, y foto para cada producto.
 **El impuesto debe estar incluido en el precio.**
 
