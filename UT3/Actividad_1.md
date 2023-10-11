@@ -28,8 +28,8 @@ Realizar un pedido de compra de 3 piezas de cada producto a "PC-Componentes".
 ### 3. 👥 Clientes:
 Crear un nuevo cliente con los detalles del compañero que tienes en tu mesa.
 Genera dos presupuestos para este cliente:
-💸 Presupuesto 1: Ordenador de alta gama (elige los componentes más potentes y caros).
-💰 Presupuesto 2: Ordenador de gama media o baja (elige componentes menos potentes y más económicos).
+- 💸 Presupuesto 1: Ordenador de alta gama (elige los componentes más potentes y caros).
+- 💰 Presupuesto 2: Ordenador de gama media o baja (elige componentes menos potentes y más económicos).
 Finalmente, vende el ordenador de alta gama a tu compañero utilizando el presupuesto creado para ello.
 
 ### 4. 🏧 Configuración del TPV (Terminal Punto de Venta):
