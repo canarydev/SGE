@@ -20,7 +20,7 @@ docker run -d -p 5432:5432 -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo --nam
 ```
 docker run --name pgadmin4 -p 80:80 -e "PGADMIN_DEFAULT_EMAIL=YOUR_MAIL" -e "PGADMIN_DEFAULT_PASSWORD=YOUR_PASS" --link db:db -d dpage/pgadmin4
 ```
-> ⚠️**CUIDADO**:⚠️ Debes poner un email válido y una contraseña en el comando anterior.
+> ⚠️**CUIDADO**: Debes poner un email válido y una contraseña en el comando anterior.
 
 ## Crear los volúmenes de Docker
 ```
