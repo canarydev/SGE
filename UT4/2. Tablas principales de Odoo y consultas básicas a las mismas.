@@ -1,0 +1,29 @@
+# Tablas principales de ![Odoo Logo](https://upload.wikimedia.org/wikipedia/commons/a/a7/Odoo_Official_Logo.png) y consultas básicas a las mismas.
+---
+
+## 1️⃣ Introducción a las tablas principales de 
+# ![Odoo Logo](https://upload.wikimedia.org/wikipedia/commons/a/a7/Odoo_Official_Logo.png)
+
+Odoo, siendo un sistema ERP robusto, cuenta con múltiples tablas que se entrelazan para ofrecer una funcionalidad extensa. Examinemos algunas de las más centrales:
+
+- **product_template:** 🛍️ Representa los productos en general.
+- **product_product:** 🔍 Detalla las variantes específicas de los productos.
+- **res_partner:** 🧑‍🤝‍🧑 Almacena información de clientes y proveedores.
+- **sale_order:** 🛒 Alberga los pedidos de venta realizados.
+- **sale_order_line:** 📝 Enumera los ítems en cada pedido de venta.
+- **purchase_order:** 📦 Refleja los pedidos de compra realizados hacia proveedores.
+- **purchase_order_line:** 🧾 Enumera los ítems en cada pedido de compra.
+- **account_move:** 💵 Alberga asientos contables, como facturas y otros movimientos financieros.
+- **pos_order:** 🏪 Contiene registros de ventas realizadas a través del Punto de Venta (PoS).
+- **pos_order_line:** 📜 Detalla los ítems vendidos en cada transacción del Punto de Venta.
+
+---
+
+## 2️⃣ Realización de Consultas Básicas
+
+### 2.1 Consulta de Productos y sus Variantes
+
+**Productos:**
+
+```sql
+SELECT * FROM product_template;
