@@ -1,2 +1,2 @@
-# UT7. Desarrollo de componentes II;
+# UT 7. Desarrollo de componentes II;
 ## Desarrollo de modelos avanzados
