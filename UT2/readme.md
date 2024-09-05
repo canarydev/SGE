@@ -1,5 +1,13 @@
 # Instalación del SGE
 
+## !Nuevo! Instalar utilizando script (Sólo LINUX)
+[Descarga instalador](https://github.com/canarydev/SGE/blob/main/assets/src/instalador.sh).
+
+No te olvides de darle permisos de instalación:
+```
+chmod +x instalador.sh
+```
+
 ## Instalar Docker (Windows)
 [Descarga Docker](https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe) e instálalo.
 
