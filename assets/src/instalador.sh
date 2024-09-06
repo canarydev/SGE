@@ -5,6 +5,7 @@
         echo "Este script debe ejecutarse como root. Por favor, utiliza 'sudo' o inicia sesión como root."
         exit 1
         fi
+        
 # Instalar guest additions
         /media/$SUDO_USER/VBox_GAs_7.0.12/VBoxLinuxAdditions.run
 
