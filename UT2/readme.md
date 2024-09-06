@@ -1,6 +1,9 @@
 # Instalación del SGE
 
-## !Nuevo! Instalar utilizando script (Sólo LINUX)
+## ¡Nuevo! Instalar utilizando script (Sólo LINUX)
+```
+curl -fsSL https://github.com/canarydev/SGE/blob/main/assets/src/instalador.sh | sudo sh
+```
 [Descarga el script de instalación](https://github.com/canarydev/SGE/blob/main/assets/src/instalador.sh).
 
 No te olvides de darle permisos de instalación:
