@@ -28,7 +28,7 @@
         
 
 # Instalar docker
-        echo "INSTALANDO DOCKER" 
+        echo "INSTALANDO DOCKER"
         echo "_________________________"
         echo "_________________________"
         echo "_________________________"
