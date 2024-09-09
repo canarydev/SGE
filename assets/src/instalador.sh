@@ -10,14 +10,14 @@
         /media/$SUDO_USER/VBox_GAs_7.0.12/VBoxLinuxAdditions.run
 
 # Instalar docker
-        apt-get update
-        apt-get install ca-certificates curl
+        apt update
+        apt install ca-certificates curl
         install -m 0755 -d /etc/apt/keyrings
         curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
         chmod a+r /etc/apt/keyrings/docker.asc
-        echo   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+        echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
         $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
-        apt-get update
+        apt update
 
 # Instalar portainer
         docker volume create portainer_data
@@ -39,6 +39,18 @@
         fi
         }
 
+        # Solicitar el correo electrónico al usuario y validarlo
+        while true; do
+        read -p "Por favor, ingresa tu correo electrónico: " email
+
+        if validar_email "$email"; then
+                echo "Correo electrónico válido."
+                break
+        else
+                echo "Correo electrónico no válido. Inténtalo de nuevo."
+        fi
+        done
+
         # Solicitar la contraseña al usuario dos veces y comprobar si coinciden
         while true; do
         read -sp "Por favor, ingresa tu contraseña: " password
@@ -53,18 +65,7 @@
                 echo "Las contraseñas no coinciden. Inténtalo de nuevo."
         fi
         done
-
-        # Solicitar el correo electrónico al usuario y validarlo
-        while true; do
-        read -p "Por favor, ingresa tu correo electrónico: " email
-
-        if validar_email "$email"; then
-                echo "Correo electrónico válido."
-                break
-        else
-                echo "Correo electrónico no válido. Inténtalo de nuevo."
-        fi
-        done
+        
         docker run --name pgadmin4 -p 80:80 -e "PGADMIN_DEFAULT_EMAIL=$email" -e "PGADMIN_DEFAULT_PASSWORD=$password" --link db:db -d dpage/pgadmin4:latest
 
 # Instalar Odoo
@@ -104,7 +105,7 @@
         docker run -d -v odoo:/var/lib/odoo -v extra-addons:/mnt/extra-addons -p 8069:8069 --name odoo16 --link db:db -t odoo:16
 
 # Instalar VScode
-        apt-get install wget gpg
+        apt install wget gpg
         wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
         install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
         echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" |sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null
@@ -115,4 +116,4 @@
 
 # Actualizar todo
         apt update
-        apt upgrade -Y                     
+        apt upgrade -y                     
