@@ -28,10 +28,6 @@
         
 
 # Instalar docker
-        echo "INSTALANDO DOCKER"
-        echo "_________________________"
-        echo "_________________________"
-        echo "_________________________"
         apt update
         sleep 1
         apt install ca-certificates curl
