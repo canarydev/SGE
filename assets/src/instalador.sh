@@ -14,7 +14,7 @@
         }
         
         # Preguntar al usuario si desea instalar las Guest Additions, con respuesta por defecto 'no'
-        read -p "¿Desea instalar las Guest Additions? [s/N]: " respuesta
+        read -p "¿Desea instalar las Guest Additions? (Debes tener el cd virtual introducido) [s/N]: " respuesta
         respuesta=${respuesta:-N}  # Si el usuario no ingresa nada, la respuesta por defecto es 'N'
         
         # Convertir a minúsculas para evitar problemas de comparación
@@ -39,8 +39,10 @@
         curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
         sleep 1
         chmod a+r /etc/apt/keyrings/docker.asc
+        sleep 1
         echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
         $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+        sleep 1
         apt update
 
 # Instalar portainer
