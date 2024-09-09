@@ -129,7 +129,7 @@
         exit 1
         fi
 
-        docker run -d -v odoo:/var/lib/odoo -v extra-addons:/mnt/extra-addons -p 8069:8069 --name odoo16 --link db:db -t odoo:16
+        docker run -d -v odoo:/var/lib/odoo -v extra-addons:/mnt/extra-addons -p 8069:8069 --name odoo --link db:db -t odoo:$odoo_version
 
 # Instalar VScode
         apt install wget gpg
