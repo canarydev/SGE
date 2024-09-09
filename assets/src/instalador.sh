@@ -28,6 +28,10 @@
         
 
 # Instalar docker
+        echo "INSTALANDO DOCKER"
+        echo "_________________________"
+        echo "_________________________"
+        echo "_________________________"
         apt update
         apt install ca-certificates curl
         install -m 0755 -d /etc/apt/keyrings
