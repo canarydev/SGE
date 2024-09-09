@@ -14,7 +14,7 @@
         }
         
         # Preguntar al usuario si desea instalar las Guest Additions, con respuesta por defecto 'no'
-        read -p "¿Desea instalar las Guest Additions? [S/n]: " respuesta
+        read -p "¿Desea instalar las Guest Additions? [s/N]: " respuesta
         respuesta=${respuesta:-N}  # Si el usuario no ingresa nada, la respuesta por defecto es 'N'
         
         # Convertir a minúsculas para evitar problemas de comparación
