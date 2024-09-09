@@ -127,6 +127,23 @@
 
         docker run -d -v odoo:/var/lib/odoo -v extra-addons:/mnt/extra-addons -p 8069:8069 --name odoo --link db:db -t odoo:$odoo_version
 
+# Eliminar la BD creada por defecto en Odoo
+        DB_NAME="odoo"
+        DB_USER="odoo"
+        DB_HOST="localhost"
+        DB_PORT="5432"
+        
+        # Eliminar la base de datos
+        echo "Eliminando la base de datos $DB_NAME..."
+        
+        psql -h $DB_HOST -U $DB_USER -p $DB_PORT -c "DROP DATABASE IF EXISTS $DB_NAME;"
+        
+        if [ $? -eq 0 ]; then
+            echo "La base de datos $DB_NAME fue eliminada con éxito."
+        else
+            echo "Hubo un problema al eliminar la base de datos $DB_NAME."
+        fi
+
 # Instalar VScode
         apt install wget gpg -y
         wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
