@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Comprobar si el script se está ejecutando como root
-        if [ "$(id -u)" -ne 0 ]; then
-        echo "Este script debe ejecutarse como root. Por favor, utiliza 'sudo' o inicia sesión como root."
-        exit 1
-        fi
+if [ "$(id -u)" -ne 0 ]; then
+echo "Este script debe ejecutarse como root. Por favor, utiliza 'sudo' o inicia sesión como root."
+exit 1
+fi
         
 # Instalar guest additions
         /media/$SUDO_USER/VBox_GAs_7.0.12/VBoxLinuxAdditions.run
