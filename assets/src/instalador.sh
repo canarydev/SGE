@@ -7,7 +7,25 @@
         fi
         
 # Instalar guest additions
-        /media/$SUDO_USER/VBox_GAs_7.0.12/VBoxLinuxAdditions.run
+        instalar_guest_additions() {
+            echo "Instalando Guest Additions..."
+            /media/$SUDO_USER/VBox_GAs_7.0.12/VBoxLinuxAdditions.run
+            echo "Guest Additions instaladas con éxito."
+        }
+        
+        # Preguntar al usuario si desea instalar las Guest Additions, con respuesta por defecto 'sí'
+        read -p "¿Desea instalar las Guest Additions? [S/n]: " respuesta
+        respuesta=${respuesta:-S}  # Si el usuario no ingresa nada, la respuesta por defecto es 'S'
+        
+        # Convertir a minúsculas para evitar problemas de comparación
+        respuesta=$(echo "$respuesta" | tr '[:upper:]' '[:lower:]')
+        
+        if [[ "$respuesta" == "s" || "$respuesta" == "sí" || "$respuesta" == "si" || "$respuesta" == "y" || "$respuesta" == "yes" ]]; then
+            instalar_guest_additions
+        else
+            echo "No se instalarán las Guest Additions."
+        fi
+        
 
 # Instalar docker
         apt update
