@@ -153,6 +153,7 @@
         apt install apt-transport-https -y
         apt update
         apt install code
+        sudo usermod -aG docker ${SUDO_USER} # Añadir al usuario al grupo docker para poder utilizar la extensión docker en VScode
 
 # Actualizar todo
         apt update
