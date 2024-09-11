@@ -74,10 +74,22 @@ No todas las compañías son iguales, por lo que no todas las soluciones lo ser�
 
 Actualmente el ERP integra todos los procesos internos y externos de la gestión, cubriendo las necesidades de la pequeña (PYME) y gran empresa en productos unificados.
 
-##### Organigrama de un ERP cualquiera:
+### 7.2 Historia de los MRP: los precursores de los ERP
+
+Antes de los actuales sistemas ERP, los primeros intentos de automatizar la planificación de los recursos en las empresas vinieron en forma de **MRP (Material Requirements Planning)** y su evolución **MRP II (Manufacturing Resource Planning)**.
+
+#### MRP (Material Requirements Planning)
+El concepto de **MRP** surgió en los años 60 y se centraba en calcular la cantidad de materias primas necesarias para la producción, basándose en la demanda proyectada. Los sistemas MRP automatizaban la gestión de inventarios y la planificación de la producción, optimizando los recursos disponibles.
+
+#### MRP II (Manufacturing Resource Planning)
+En los años 80, **MRP II** amplió el alcance de MRP al incluir no solo la planificación de materiales, sino también otros recursos, como maquinaria y mano de obra. MRP II también integraba aspectos como la contabilidad y la planificación de la capacidad, convirtiéndose en un sistema más integral y un precursor directo de los ERP actuales.
+
+Con la evolución de **MRP I** y **MRP II**, se sentaron las bases para los **ERP modernos**, que no solo gestionan los recursos de producción, sino que abarcan todas las áreas de una empresa, integrando finanzas, ventas, recursos humanos y más en una única plataforma.
+
+#### Organigrama de un ERP cualquiera:
 ![enter image description here](https://codeplus.es/wp-content/uploads/2019/07/erp-software.jpg)
 
-#### 7.1.1 Revisión de los ERP actuales
+### 7.3 Revisión de los ERP actuales
 #### **ERP de SAP (SAP ERP)**
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/SAP_2011_logo.svg/800px-SAP_2011_logo.svg.png" alt="SAP" style="max-width:50px;">
 
@@ -88,8 +100,7 @@ Actualmente el ERP integra todos los procesos internos y externos de la gestión
 -   Módulos altamente integrables entre sí.
 
 ##### Año de creación:
-
-1972 (SAP fue fundada; el ERP ha evolucionado desde entonces).
+1992 (SAP R/3).
 
 ##### Ventajas:
 
@@ -117,8 +128,7 @@ No.
 -   Inteligencia artificial integrada.
 
 ##### Año de creación:
-
-1977 (Oracle fue fundada; el ERP ha evolucionado desde entonces).
+2012.
 
 ##### Ventajas:
 
@@ -146,8 +156,7 @@ No.
 -   Modularidad: se pueden adquirir módulos específicos según las necesidades.
 
 ##### Año de creación:
-
-2001 (como Microsoft Dynamics; ha evolucionado desde entonces).
+2001 (como Microsoft Dynamics).
 
 ##### Ventajas:
 
@@ -176,6 +185,7 @@ No.
 
 ##### Año de creación:
 2006
+
 ##### Ventajas:
 
 -   Flexibilidad y adaptabilidad.
@@ -221,14 +231,14 @@ Sí, pero con versión comercial.
 #### Tabla comparativa
 | ERP            | Año de creación | Software libre | Ventajas clave                             | Inconvenientes clave                    |
 |----------------|-----------------|----------------|--------------------------------------------|-----------------------------------------|
-| SAP ERP        | 1972            | No             | Solidez, funcionalidades, presencia global | Costo, curva de aprendizaje empinada    |
-| Oracle ERP     | 1977            | No             | Innovación, integración, escalabilidad     | Costo, implementación compleja          |
+| SAP ERP        | 1992            | No             | Solidez, funcionalidades, presencia global | Costo, curva de aprendizaje empinada    |
+| Oracle ERP     | 2012            | No             | Innovación, integración, escalabilidad     | Costo, implementación compleja          |
 | Microsoft ERP  | 2001            | No             | Integración con Microsoft, adaptabilidad   | Dependencia, costo de licencias         |
 | Openbravo      | 2006            | Sí             | Flexibilidad, código abierto               | Menor presencia en el mercado           |
 | Odoo           | 2005            | Sí             | Usabilidad, modularidad, comunidad         | Funciones avanzadas en versión de pago  |
 
 
-### 7.2 CRM
+### 7.4 CRM
 
 **CRM (Customer Relationship Management)** es un sistema orientado a la gestión de las relaciones con los clientes. Permite administrar ventas, marketing y servicio al cliente.
 
