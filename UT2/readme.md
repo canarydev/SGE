@@ -2,13 +2,7 @@
 
 ## ¡Nuevo! Instalar utilizando script (Sólo LINUX)
 ```
-curl -fsSL https://raw.githubusercontent.com/canarydev/SGE/main/assets/src/instalador.sh > instalador.sh
-```
-```
-chmod +x instalador.sh
-```
-```
-sudo ./instalador.sh
+curl -fsSL https://raw.githubusercontent.com/canarydev/SGE/main/assets/src/instalador.sh > instalador.sh && chmod +x instalador.sh && sudo ./instalador.sh
 ```
 
 ## Instalar Docker (Windows)
