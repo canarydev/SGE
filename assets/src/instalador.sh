@@ -160,7 +160,7 @@
         code --install-extension ms-python.python
         code --install-extension ms-vscode-remote.remote-containers
         code --install-extension mechatroner.raincsv
-        
+        code --install-extension visualstudioexptteam.vscodeintellicode
 
 # Actualizar todo
         apt update
