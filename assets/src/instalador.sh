@@ -155,6 +155,13 @@
         apt install code
         usermod -aG docker ${SUDO_USER} # Añadir al usuario al grupo docker para poder utilizar la extensión docker en VScode
 
+  # Instalar las extensiones VScode
+        code --install-extension ms-azuretools.vscode-docker
+        code --install-extension ms-python.python
+        code --install-extension ms-vscode-remote.remote-containers
+        code --install-extension mechatroner.raincsv
+        
+
 # Actualizar todo
         apt update
         apt upgrade -y                     
