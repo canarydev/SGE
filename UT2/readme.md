@@ -49,3 +49,16 @@ docker run -d -v odoo:/var/lib/odoo -v extra-addons:/mnt/extra-addons -p 8069:80
 Es probable que el problema se deba a Windows Subsystem for Linux. Descarga [WSL Update](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi) e instálalo, debería dar resultado.
 
 En caso de usar una máquina de arquitectura arm64, descarga [WSL Update para arm64](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_arm64.msi).
+
+## Instalar VScode
+```
+apt install wget gpg -y
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
+echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" |sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null
+rm -f packages.microsoft.gpg
+apt install apt-transport-https -y
+apt update
+apt install code
+usermod -aG docker ${SUDO_USER} # Añadir al usuario al grupo docker para poder utilizar la extensión docker en VScode
+```
