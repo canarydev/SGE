@@ -61,7 +61,7 @@ Es probable que el problema se deba a Windows Subsystem for Linux. Descarga [WSL
 
 En caso de usar una máquina de arquitectura arm64, descarga [WSL Update para arm64](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_arm64.msi).
 
-## Instalar VScode
+## Instalar VScode (Linux)
 ```
 apt install wget gpg -y
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
