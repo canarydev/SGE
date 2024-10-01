@@ -1,6 +1,7 @@
 # UT 3. Uso del sistema ERP-CRM
 
 En esta unidad aprenderás a:
+- Realizar la configuración básica de Odoo.
 - Instalar módulos.
 - Crear productos y variantes.
 - Realizar compras.
