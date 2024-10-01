@@ -1,0 +1,13 @@
+# Recuperación de contraseñas
+
+## pgAdmin4
+
+Sólo puedes recuperarla reinstalando:
+
+```
+docker stop pgadmin4 && docker rm pgadmin4
+```
+```
+docker run --name pgadmin4 -p 80:80 -e "PGADMIN_DEFAULT_EMAIL=YOUR_MAIL" -e "PGADMIN_DEFAULT_PASSWORD=YOUR_PASS" --link db:db -d dpage/pgadmin4
+```
+Cambia **YOUR_MAIL** por un mail válido y **YOUR_PASS** por tu contraseña.
