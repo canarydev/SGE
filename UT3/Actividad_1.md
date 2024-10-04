@@ -15,7 +15,7 @@ Dentro del módulo de Ventas, crea los siguientes productos:
 - 🔌 Fuentes de alimentación (x2 modelos diferentes).
 - 🛠️ Placas base (x3 modelos diferentes).
 - 🎮 Tarjetas gráficas (x3 modelos diferentes).
-Nota: Cada modelo debe tener dos variantes: normal y TI.
+Nota: Cada modelo debe tener dos variantes: normal y TI, o la numeración de las series.
 - 🧠 Microprocesador (x3 modelos diferentes).
 - 💾 Almacenamiento secundario (SSD, NVME o HDD. Debe haber al menos uno de cada tipo).
 - 🌐 Memoria RAM (x3 modelos diferentes).
