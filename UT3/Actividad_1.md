@@ -41,7 +41,7 @@ Configura el TPV para implementar ventas cruzadas. Es decir, al seleccionar un p
 Realiza dos ventas en el TPV.
 
 ### ⚙️ Entrega:
-🔐 Backup de la base de datos.
+🔐 Backup de la base de datos y un documento donde, mediante imágenes, se muestren que se cumple cada requisito.
 
 ### 📋 Evaluación:
 Se evaluará al alumno en función de:
