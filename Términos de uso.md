@@ -11,14 +11,12 @@ Repositorio disponible en:
 
 ## Licencia
 
-Este repositorio está licenciado bajo la **Licencia Pública General de GNU (GPL)** versión 3 o posterior, en lo que respecta a cualquier software que contenga. Puedes consultar más detalles en el archivo `LICENSE`.
+Este repositorio está licenciado bajo una **Licencia Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**. Esto significa que puedes compartir y adaptar el contenido, siempre que se dé atribución adecuada al autor, no se utilice con fines comerciales, y se indiquen los cambios realizados. Puedes leer más detalles en el archivo `LICENSE`.
 
 ---
 
 Copyright (C) 2024 Joshua M. González Santana.
 
-Este material es libre: puede redistribuirlo y/o modificarlo bajo los términos de la Licencia Pública General de GNU según lo publicado por la Free Software Foundation, ya sea la versión 3 de la Licencia, o (a su elección) cualquier versión posterior de la misma.
+Este material está bajo una licencia **Creative Commons Attribution-NonCommercial 4.0 International**. Para más información sobre esta licencia, consulta <https://creativecommons.org/licenses/by-nc/4.0/>.
 
-Este material se distribuye con la esperanza de que sea útil, pero **SIN NINGUNA GARANTÍA**; ni siquiera la garantía implícita de **COMERCIABILIDAD** o **IDONEIDAD PARA UN PROPÓSITO PARTICULAR**. Para más detalles, consulta la Licencia Pública General de GNU.
-
-Deberías haber recibido una copia de la Licencia Pública General de GNU junto con este material. Si no es así, consulta <https://www.gnu.org/licenses/>.
+No está permitida la utilización de este material para **fines comerciales**.
