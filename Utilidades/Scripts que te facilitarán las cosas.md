@@ -1,4 +1,4 @@
-Aquí encontrarás algunos scripts que te pueden facilitar el uso de docker:
+# Aquí encontrarás algunos scripts que te pueden facilitar el uso de docker
 
 ### Abrir la terminal de un contenedor
 
