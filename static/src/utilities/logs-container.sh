@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ "\$#" -ne 1 ]; then
-    echo "Usage: log-container <container-name>"
+    echo "Usage: logs-container <container-name>"
     exit 1
 fi
 
