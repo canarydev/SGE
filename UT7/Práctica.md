@@ -5,7 +5,7 @@ En esta práctica, trabajarás con el desarrollo de módulos en Odoo para gestio
 
 Para ello te proporciono un archivo llamado `Pokémon.zip`, que puedes descargar haciendo click [**aquí**](https://github.com/canarydev/SGE/raw/main/static/src/Pokemon.zip)
 
-Se trata de la continuación de lo ya realizado en la práctica anterior, por lo que puedes continuar por aquí.
+Se trata de la continuación de lo ya realizado en la práctica anterior, por lo que puedes continuarla.
 
 ---
 
