@@ -1,64 +1,68 @@
-# Práctica: Pokemon 1.
+# Práctica: ![pokeball](https://emojis.slackmojis.com/emojis/images/1660307710/60591/pokeball.gif?1660307710) Pokemon II.
 
 ## Introducción
 En esta práctica, trabajarás con el desarrollo de módulos en Odoo para gestionar Pokémon. Crearás modelos, relaciones, restricciones y vistas que permitan gestionar información sobre Pokémon, especies, entrenadores y equipos.
 
+Para ello te proporciono un archivo llamado `Pokémon.zip`, que puedes descargar haciendo click [**aquí**](https://github.com/canarydev/SGE/raw/main/static/src/Pokemon.zip)
+
+
 ---
 
 ## Objetivos
-1. **Crear los modelos**: `specie`, `pokemon`, `trainer` y `team`.
+1. **Crear los modelos**: `specie`, `pokemon`, `poketype`, `trainer` y `team`.
 2. **Configurar vistas tree y form** para cada modelo.
-3. **Establecer relaciones entre los modelos**:
-   - Un equipo pertenece a un entrenador.
-4. **Establecer restricciones**:
-   - Un equipo puede tener un máximo de 6 Pokémon.
-   - Cada Pokémon está basado en una especie, y sus estadísticas no deben exceder los límites definidos por esta.
-4. **Diseñar vistas intuitivas y atractivas** para mostrar toda la información de forma clara.
+3. **Establecer relaciones entre los modelos**.
+4. **Establecer restricciones**, de ser posible, utilizando `@api.constraints` y `_sql_constraint`.
+5. **Utilizar `@api.on_change`y `@api.depends`**.
+6. **Diseñar vistas intuitivas y atractivas** para mostrar toda la información de forma clara.
 
 ---
 
-## Requisitos
+## Objetivos detallados
 
 ### 1. Modelos a crear
 - **Specie (Especie):** Representa una especie de Pokémon con sus estadísticas máximas.
-  - Información básica: nombre, estadísticas máximas (HP, ataque, defensa), etc, imagen.
-- **PokeTypes (Tipos)**: Representa los distintos tipos que existen.
+  - Información básica: nombre, estadísticas máximas (HP, ataque, defensa), tipos, etc. Se utilizarán todos los campos existentes en el `csv` que se comparte dentro del fichero .zip.
+- **PokeType (Tipos)**: Representa los distintos tipos que existen.
   - Nombre.
-- **Pokemon:** Representa un Pokémon individual basado en una especie.
-  - Información básica: La misma que la de su especie, pero con características propias, mote y entrenador.
+- **Pokemon:** Representa un pokémon individual basado en una especie.
+  - Información básica: La misma que la de su especie, pero con características propias, `mote` y `entrenador`.
 - **Trainer (Entrenador):** Representa un entrenador Pokémon.
   - Información básica: nombre. Puede tener varios equipos.
 - **Team (Equipo):** Representa un equipo de Pokémon.
-  - Información básica: nombre del equipo.
-  - Relación: pertenece a un entrenador y contiene Pokémon.
+  - Información básica: nombre del equipo, integrantes del mismo y entrenador.
 
 ---
 
 ### 2. Relaciones entre modelos
 - Cada **equipo** está vinculado a un **entrenador**.
-- Cada **equipo** puede contener hasta 6 Pokémon.
-- Cada **Pokémon** está basado en una **especie**.
+- Cada **equipo** puede contener hasta 6 pokémon.
+- Cada **pokémon** está basado en una **especie**.
 - Cada **especie** y **Pokemon** tiene **tipos**.
 
 ---
 
 ### 3. Restricciones y validaciones
 - Implementa restricciones para:
-  - Limitar el número de Pokémon por equipo a un máximo de 6.
-  - Validar que las estadísticas de un Pokémon no superen los valores máximos permitidos por su especie.
+- Limitar el número de Pokémon por equipo a un máximo de 6 y un mínimo de 1.
+- Validar que las estadísticas de un Pokémon no superen los valores máximos permitidos por su especie.
 
 ---
 
-### 4. Vistas
+### 4. `@api.on_change` y `@api.depends` 
+- Investiga y aprende a utilizarlos en el modelo `Pokemon`.
+
+---
+
+### 5. Vistas
 - Diseña vistas **tree** y **form** para cada modelo.
 - Asegúrate de que las vistas:
-  - Muestren toda la información relevante de manera clara.
-  - Sean intuitivas y atractivas.
-  - Permitan realizar las operaciones necesarias para gestionar los datos.
+- Muestren toda la información relevante de manera clara.
+- Sean intuitivas y atractivas.
+- Permitan realizar las operaciones necesarias para gestionar los datos.
 
 ---
-
-### 5. Libertad creativa
+### 6. Libertad creativa
 Se permite libertad para:
 - Diseñar los formularios y listas con la estructura y estilo que consideres más adecuados.
 - Añadir campos adicionales si crees que enriquecen el modelo.
@@ -77,14 +81,14 @@ Se permite libertad para:
 1. **Correcta implementación de los modelos**:
    - Estructura lógica y relaciones entre ellos.
 2. **Cumplimiento de las restricciones**:
-   - Número máximo de Pokémon por equipo.
+   - Número máximo y mínimo de Pokémon por equipo.
    - Estadísticas limitadas por especie.
 3. **Calidad de las vistas**:
    - Claridad, intuición y diseño.
 4. **Funcionalidad del módulo**:
    - Que sea instalable y operativo en una instancia de Odoo.
 5. **Entrega**:
-   - Que se entregue en tiempo y forma, entregando los archivos necesarios para demostrar que se ha realizado correctamente.
+   - Que se entregue en tiempo y forma a través de la plataforma Moodle, entregando los archivos necesarios para demostrar que se ha realizado correctamente.
 
 ---
 
