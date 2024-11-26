@@ -5,4 +5,4 @@ if [ "\$#" -ne 1 ]; then
 fi
 
 CONTAINER_NAME="\$1"
-docker logs -f "\$CONTAINER_NAME"
+docker logs -f "$CONTAINER_NAME"
