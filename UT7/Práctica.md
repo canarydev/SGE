@@ -22,15 +22,15 @@ Para ello te proporciono un archivo llamado `Pokémon.zip`, que puedes descargar
 
 ### 1. Modelos a crear
 - **Specie (Especie):** Representa una especie de Pokémon con sus estadísticas máximas.
-  - Información básica: nombre, estadísticas máximas (HP, ataque, defensa), tipos, etc. Se utilizarán todos los campos existentes en el `csv` que se comparte dentro del fichero .zip.
+  - Nombre, estadísticas máximas (HP, ataque, defensa), tipos, etc. Se utilizarán todos los campos existentes en el `csv` que se comparte dentro del fichero .zip.
 - **PokeType (Tipos)**: Representa los distintos tipos que existen.
   - Nombre.
 - **Pokemon:** Representa un pokémon individual basado en una especie.
-  - Información básica: La misma que la de su especie, pero con características propias, `mote` y `entrenador`.
+  - Mismos campos que los de su especie, pero con características propias, `mote` y `entrenador`.
 - **Trainer (Entrenador):** Representa un entrenador Pokémon.
-  - Información básica: nombre. Puede tener varios equipos.
+  - Nombre y equipos. Puede tener varios equipos.
 - **Team (Equipo):** Representa un equipo de Pokémon.
-  - Información básica: nombre del equipo, integrantes del mismo y entrenador.
+  - Nombre del equipo, integrantes del mismo y entrenador.
 
 ---
 
