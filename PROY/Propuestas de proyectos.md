@@ -6,3 +6,5 @@ TPV - Que muestre el número de unidades en la tienda con un contador, si no hay
 
 Crear un módulo que imprima etiquetas de productos tal que así:
 ![etiqueta](https://raw.githubusercontent.com/canarydev/SGE/refs/heads/main/static/images/PROY/etiqueta.png)
+
+Crear un widget que mejore manytomanytags para que permita poner cualquier color, y a las letras igual.
