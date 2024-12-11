@@ -44,7 +44,7 @@ Ahora crea `restart.xml`:
 
     <!--Acción actualización--> 
     <record id="action_update_my_module" model="ir.actions.server">
-      <field name="name">Actualizar Módulos</field>
+      <field name="name">Actualizar my_model</field>
       <field name="model_id" ref="base.model_ir_module_module"/>
       <field name="binding_model_id" ref="base.model_ir_module_module"/>
       <field name="state">code</field>
