@@ -1,0 +1,172 @@
+<!--wine_reviews_base/views/review.xml-->
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="review_list">
+      <field name="name">review.list</field>
+      <field name="model">wine_reviews_base.review</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="wine_vintage"/>
+          <field name="variety"/>
+          <field name="winery"/>
+          <field name="points_html"/>
+          <field name="price"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="review_form">
+      <field name="name">review.form</field>
+      <field name="model">wine_reviews_base.review</field>
+      <field name="arch" type="xml">
+        <form string="Reseñas de vinos">
+          <sheet>
+            <div class="oe_avatar">
+              <label for="points_html" string="U. Classi."/> <field name="points_html"/>
+            </div>
+          <div class="oe_title mb32">
+            <h1>
+              <field name="title" placeholder="Nombre del vino"/>
+            </h1>
+            <h3 class="oe_fade">
+              Por <field name="taster" class="oe_inline" placeholder="Nombre del autor"/>
+              <br/>
+            <!-- modifiers="{&quot;readonly&quot;: true}"/>-->
+            </h3>
+          </div>
+          <div class="clearfix"/>
+          <notebook>
+            <page string="Información general" name="general_information">
+              <group name="group_top">
+                <group name="group_left">
+                  <field name="wine"/>
+                  <field name="wine_vintage"/>
+                  <field name="winery"/>
+                  <field name="variety" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                </group>
+                <group name="group_right">
+                  <field name="price"/>
+                  <field name="points"/>
+                </group>
+              </group>
+            </page>
+            <page string="Información Geográfica" name="geographic_information">
+              <group name="group_top">
+                <group name="group_left">
+                  <field name="country" options="{'no_create': True}"/>
+                  <field name="province"/>
+                </group>
+                <group name="group_right">
+                  <field name="region_1"/>
+                  <field name="region_2"/>
+                </group>
+              </group>
+            </page>
+            <page string="Crítica" name="review_information">
+              <group name="group_top">
+                <group name="group_left">
+                  <field name="taster"/>
+                  <field name="twitter_account"/>
+                </group>
+                <group name="group_right">
+                    <field name="description"  widget="pad" class="custom_textbox"/>
+                    <!--<field name="translation" widget="text" options="{'style': 'height: 100px; resize: vertical;'}"/>-->
+                </group>
+              </group>
+            </page>
+          </notebook>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record model="ir.ui.view" id="review_kanban">
+    <field name="name">review.kanban</field>
+    <field name="model">wine_reviews_base.review</field>
+    <field name="arch" type="xml">
+      <kanban class="o_kanban_mobile" sample="1">
+        <field name="country"/>
+        <field name="description"/>
+        <field name="points"/>
+        <field name="price"/>
+        <field name="taster"/>
+        <field name="variety"/>
+        <field name="winery"/>
+        <template id="wine_review_kanban_template">
+          <t t-name="kanban-box">
+          <!--oe_kanban_color_#{kanban_getcolor(record.color.raw_value)}-->
+          <div t-attf-class="
+            oe_kanban_global_click">
+              <div class="oe_kanban_details">
+                <strong class="o_kanban_record_title" style="display: flex; align-items: center;">
+                  <field name="_country_image_url" widget="image_url" class="oe_avatar" options="{'size': [20,20]}" style="margin-right: 10px;"/>
+                  <field name="winery"/>
+                </strong>
+                <div>
+                  <span class="o_kanban_record_subtitle">
+                    <field name="variety" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                  </span>
+                </div>
+                <div class="o_kanban_record_bottom">
+                  <div class="oe_kanban_bottom_left">
+                    <div class="group_left" style="display: flex; flex-direction: column;">
+                      
+                      <div style="display: flex; align-items: left;">
+                        UC:<field name="points_html"/>
+                      </div>
+                    </div>
+                    <div class="group_right" style="display: flex; flex-direction: column;">
+                      
+                    </div>
+                  </div>
+                  <div class="oe_kanban_bottom_right" style="display: flex; flex-direction: column;">
+                    <t t-if="record.taster.raw_value">
+                      <div style="display: flex; align-items: center;">
+                        <i class="fa fa-user" style="margin-right:5px;"></i>
+                        <field name="taster"/>
+                      </div>
+                    </t>
+                    <t t-else="">
+                      <div style="display: flex; align-items: center;">
+                        <i class="fa fa-user" style="margin-right:5px;"></i>
+                        Desconocido
+                      </div>
+                    </t>
+                    <t t-if="record.twitter_account.raw_value and record.twitter_account.raw_value != 'NULL'">
+                      <div style="display: flex; align-items: left;">
+                        <i class="fa fa-twitter" style="margin-right: 5px;"></i>
+                        <field name="twitter_account"/>
+                      </div>
+                    </t>
+                  </div>
+                </div>
+                <div class="custom_oe_line_separator"/>
+                <div>
+                  <field name="_description_preview" widget="text_ellipsis"/>
+                </div>
+              </div>
+            </div>
+          </t>
+        </template>
+      </kanban>
+    </field>
+  </record>
+
+
+
+  <record model="ir.actions.act_window" id="wine_review_action_window">
+    <field name="name">Reseñas</field>
+    <field name="res_model">wine_reviews_base.review</field>
+    <field name="view_mode">kanban,tree,form</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">
+          Reseñas de vinos
+      </p>
+      <p>
+          Haz click en 'Nuevo' para añadir nuevos elementos.
+      </p>
+    </field>
+  </record>
+
+</data>
+</odoo>

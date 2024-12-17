@@ -1,0 +1,118 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="taster_list">
+      <field name="name">taster.list</field>
+      <field name="model">wine_reviews_base.taster</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="twitter_account"/>
+          <!--<field name="num_of_reviews"/>--> <!--Se ralentiza mucho la vista-->
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="taster_form">
+      <field name="name">taster.form</field>
+      <field name="model">wine_reviews_base.taster</field>
+      <field name="arch" type="xml">
+        <form string="Catadores de vinos">
+          <sheet>
+              <field name="points_average" class="oe_avatar" modifiers="{&quot;readonly&quot;: true}"/>
+              <div class="oe_title mb32">
+                <h1><field name="name" placeholder="Nombre del catador"/></h1>
+                  <h3 class="oe_fade">
+                    En Twitter <i class="fa fa-twitter"/><field name="twitter_account" class="oe_inline" placeholder="Cuenta de Twitter"/>
+                  </h3>
+              </div>
+              <div class="clearfix"/>
+              <notebook>
+                  <page string="Información general" name="general_information">
+                      <group name="group_top">
+                          <group name="group_left">
+                            <field name="num_of_reviews"/>
+                            <field name="points_average"/>
+                          </group>
+                          <group name="group_right">
+                          </group>
+                      </group>
+                  </page>
+                  <page string="Últimas críticas" name="review_information">
+                    <field name="review_ids" options="{'create': False}">
+                        <kanban>
+                            <!-- Estructura de la tarjeta Kanban -->
+                            <templates>
+                                <t t-name="kanban-box">
+                                <div class="oe_kanban_global_click">
+                                    <div class="oe_kanban_details">
+                                        <strong class="o_kanban_record_title" style="display: flex; align-items: center;">
+                                          <field name="_country_image_url" widget="image_url" class="oe_avatar" options="{'size': [20,20]}" style="margin-right: 10px;"/>
+                                          <field name="winery"/>
+                                        </strong>
+
+                                        <div>
+                                            <span class="o_kanban_record_subtitle">
+                                        <field name="variety" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                            </span>
+                                        </div>
+                                      
+                                        <div class="o_kanban_record_bottom">
+                                          <div class="oe_kanban_bottom_left">
+                                            <div class="group_left" style="display: flex; flex-direction: column;">
+                                              <!--<div style="display: flex; align-items: center;">
+                                                Vader: <field name="vader_sentiment_score"/>
+                                              </div>
+                                              -->
+                                              <div style="display: flex; align-items: center;">
+                                                Price: <field name="price"/>
+                                              </div>
+                                            </div>
+                                            <div class="group_right">
+                                            
+                                            </div>
+                                          </div>
+                                            <div class="oe_kanban_bottom_right" style="display: flex; flex-direction: column;">
+                                              <div style="display: flex; align-items: center;">
+                                                  <i class="fa fa-user" style="margin-right:5px;"></i>
+                                                  <field name="taster"/>
+                                              </div>
+                                              <div style="display: flex; align-items: left;">
+                                                  <i class="fa fa-twitter" style="margin-right: 5px;"></i>
+                                                  <field name="twitter_account"/>
+                                                  <div class="custom_oe_line_separator"/>
+                                              </div>
+                                            </div>
+                                        </div>
+                                        <div class="custom_oe_line_separator"/>
+                                        <div> 
+                                            <field name="_description_preview" widget="text_ellipsis"/>
+                                        </div>
+                                    </div>
+                                </div>
+                              </t>
+                            </templates>
+                        </kanban>
+                    </field>
+                  </page>
+              </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="taster_action_window">
+      <field name="name">taster</field>
+      <field name="res_model">wine_reviews_base.taster</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          Catador
+        </p>
+        <p>
+          Haz click en 'Nuevo' para añadir nuevos elementos.
+        </p>
+      </field>
+    </record>
+
+  </data>
+</odoo>
