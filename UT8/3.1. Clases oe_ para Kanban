@@ -1,0 +1,71 @@
+### Clases `oe_` en tarjetas Kanban
+
+Las tarjetas Kanban en Odoo utilizan diversas clases `oe_` y `o_` para estructurar y estilizar su contenido. Las siguientes clases se encuentran ubicadas en diferentes posiciones de la tarjeta:
+
+#### oe_kanban_content
+- **Utilidad:** Define el contenido principal dentro de una tarjeta Kanban, típicamente utilizado para agrupar información visual de manera clara y accesible. Esencial para la visualización efectiva de datos en el contexto de las vistas Kanban.
+
+#### oe_kanban_global_click
+- **Utilidad:** Hace que toda la tarjeta Kanban sea clickeable, mejorando la interactividad y accesibilidad de las tarjetas Kanban. Facilita la navegación y la revisión de detalles de los registros representados por las tarjetas.
+
+#### o_kanban_record_title
+- **Posición:** Parte superior de la tarjeta.
+- **Utilidad:** Estiliza el título principal del registro en la vista Kanban. Es clave para identificar rápidamente el registro representado.
+
+#### o_kanban_record_subtitle
+- **Posición:** Justo debajo del título.
+- **Utilidad:** Define el estilo del subtítulo, que suele ser información secundaria o complementaria al título principal.
+
+#### o_kanban_record_bottom
+- **Posición:** Parte inferior de la tarjeta Kanban.
+- **Utilidad:** Contiene la sección inferior de la tarjeta donde se suelen colocar otros elementos como botones o información adicional.
+
+#### oe_kanban_bottom_left
+- **Posición:** Esquina inferior izquierda de la tarjeta Kanban.
+- **Utilidad:** Estiliza elementos ubicados en la esquina inferior izquierda, como etiquetas, información resumida o iconos.
+
+#### oe_kanban_bottom_right
+- **Posición:** Esquina inferior derecha de la tarjeta Kanban.
+- **Utilidad:** Define el estilo de los elementos situados en la esquina inferior derecha, como botones de acción, contadores u otras acciones interactivas.
+
+---
+
+### Ejemplo vista Kanban
+
+A continuación, un ejemplo que muestra cómo se aplican estas clases dentro de una vista Kanban en Odoo:
+
+```xml
+<odoo>
+    <record id="view_project_task_kanban" model="ir.ui.view">
+        <field name="name">project.task.kanban</field>
+        <field name="model">project.task</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_example">
+                <templates>
+                    <t t-name="kanban_example">
+                        <div class="o_kanban_record">
+                            <div class="o_kanban_record_title">
+                                <t t-esc="record.name" />
+                            </div>
+                            <div class="o_kanban_record_subtitle">
+                                <t t-esc="record.sub_title" />
+                            </div>
+                            <div class="o_kanban_record_bottom">
+                                <div class="oe_kanban_bottom_left">
+                                    <span>Etiqueta izquierda</span>
+                                </div>
+                                <div class="oe_kanban_bottom_right">
+                                    <button type="button" class="btn btn-primary">Acción</button>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+                <field name="name" />
+                <field name="sub_title" />
+            </kanban>
+        </field>
+    </record>
+</odoo>
+
+```
