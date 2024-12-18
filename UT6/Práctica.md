@@ -3,7 +3,7 @@
 ## Introducción
 En esta práctica, trabajarás con el desarrollo de módulos en Odoo para gestionar Pokémon. Crearás modelos y vistas que permitan gestionar información sobre especies, entrenadores y tipos.
 
-Para ello te proporciono un archivo llamado `Pokémon.zip`, que puedes descargar haciendo click [**aquí**](https://github.com/canarydev/SGE/raw/main/static/src/Pokemon.zip)
+Para ello te proporciono un archivo llamado `Pokémon.zip`, que puedes descargar haciendo click [**aquí**](https://github.com/canarydev/SGE/raw/main/static/csv/Pokemon.zip)
 
 
 ---
