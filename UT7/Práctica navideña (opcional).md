@@ -55,7 +55,7 @@ Para ayudarte a empezar, puedes utilizar los conceptos y herramientas aprendidos
   - Estado (Selection: `recibido`, `presupuestado`, `pagado`, `terminado y firmado`).  
   - Precio inicial (Float).  
   - Respuesta del abogado (Text).  
-  - Firma (Widget de firma).  
+  - Firma (Widget de firma **signature**). Sólo puede mostrarse si el estado es `pagado` o `terminado y firmado`
 
 ---
 
