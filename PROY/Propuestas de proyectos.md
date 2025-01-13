@@ -12,3 +12,5 @@ Crear un widget que mejore manytomanytags para que permita poner cualquier color
 Permitir leer archivos Webp.
 
 Elegir las horas a mostrar en la vista Calendar.
+
+Integrar sistemas de pago de prueba.
