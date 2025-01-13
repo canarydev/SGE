@@ -1,7 +1,5 @@
 # Práctica: 🏛️ Bufete de Abogados
 
----
-
 ## Introducción  
 En esta práctica, trabajarás con el desarrollo de módulos en Odoo para gestionar la operativa de un bufete de abogados. Crearás modelos, relaciones, restricciones y vistas que permitan gestionar información sobre abogados, especialidades, clientes y consultas realizadas. Además, implementarás funcionalidades específicas como un widget de firma y flujos basados en estados para las consultas.
 
@@ -10,8 +8,8 @@ Para ayudarte a empezar, puedes utilizar los conceptos y herramientas aprendidos
 ---
 
 ## Objetivos  
-1. **Crear los modelos**: `especializacion`, `abogado`, `cliente`, `consulta` y otros relacionados.  
-2. **Configurar vistas tree, form y kanban** para cada modelo.  
+1. **Crear los modelos**: `especializacion`, `abogado`, `cliente`, `consulta` y otros si fuese necesario.  
+2. **Configurar vistas tree, form** para cada modelo. La vista **kanban** para el modelo consulta.  
 3. **Establecer relaciones entre los modelos.**  
 4. **Establecer restricciones**, de ser posible, utilizando `@api.constraints` y `_sql_constraint`.  
 5. **Utilizar `@api.on_change` y `@api.depends`**.  
@@ -50,10 +48,10 @@ Para ayudarte a empezar, puedes utilizar los conceptos y herramientas aprendidos
 - Representa una consulta realizada por un cliente.  
 - **Campos sugeridos:**  
   - Cliente (Many2one hacia `cliente`).  
-  - Especialización requerida (Many2one hacia `especializacion`, opcional si no se selecciona abogado).  
+  - Especialización requerida (Many2one hacia `especializacion`).  
   - Abogado asignado (Many2one hacia `abogado`, filtrado por la especialización requerida).  
   - Estado (Selection: `recibido`, `presupuestado`, `pagado`, `terminado y firmado`).  
-  - Precio inicial (Float).  
+  - Presupuesto (Float o Monetary).
   - Respuesta del abogado (Text).  
   - Firma (Widget de firma **signature**). Sólo puede mostrarse si el estado es `pagado` o `terminado y firmado`
 
