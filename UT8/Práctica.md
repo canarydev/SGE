@@ -35,7 +35,7 @@ Los Pokemon deben presentarse como una vista Kanban que condense la información
 
 ### 3. Añadir un nuevo campo mediante XPath
 
-El campo `lvl` que indicará el nivel del Pokemon. Estará dentro del modelo `pokemon.pokemon` y debe ser introducido mediante [**XPath**](https://github.com/canarydev/SGE/blob/main/UT8/7.%20XPath.md).
+El campo `lvl` que indicará el nivel del Pokemon. Estará dentro del modelo `pokemon.pokemon` y debe ser introducido mediante [**XPath**](https://github.com/canarydev/SGE/blob/main/UT8/7.%20XPath.md), como una nueva vista que hereda de la vistas `pokemon_form` y `pokemon_tree`.
 
 Debes añadir la restriccuón de que el nivel debe estar entre 1 y 100.
 
