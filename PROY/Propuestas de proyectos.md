@@ -14,3 +14,5 @@ Permitir leer archivos Webp.
 Elegir las horas a mostrar en la vista Calendar.
 
 Integrar sistemas de pago de prueba.
+
+Integrar un mapa en una vista: Dada una dirección, debería aparecer un mapa que indique esa dirección.
