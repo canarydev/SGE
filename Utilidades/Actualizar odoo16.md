@@ -1,3 +1,5 @@
+# NO USAR, ahora da problemas y deja el contenedor inservible
+
 En ocasiones, podemos encontrarnos que nuestra versión de python en Odoo16 limita lo que podemos hacer. No pasa nada. Utiliza los siguientes comandos para cambiar de versión de python a una más moderna (3.12.8).
 
 ```bash
