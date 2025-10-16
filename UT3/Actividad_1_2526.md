@@ -42,8 +42,8 @@ Por tanto, los vinos tributarán con **IVA (21%) + IEV (5%)**, resultando en una
 
 > 💡 En Odoo, esto se puede configurar de tres formas posibles:
 > 1. Crear un impuesto **IEV (5%)** y añadirlo **además del IVA (21%)** a los productos. ✅ *(Recomendado para este ejercicio)*  
-> 2. Crear un único impuesto del **26%** que englobe ambos.  
-> 3. Crear un impuesto del **5%** que se aplique automáticamente cuando se use el IVA (requiere secuencia de impuestos o impuestos hijos). ✅ *(Recomendado para este ejercicio)* 
+> 2. Crear un único impuesto del **26%** que englobe ambos.  (NO)
+> 3. Crear un impuesto del **5%** que se aplique automáticamente cuando se use el IVA (requiere secuencia de impuestos o impuestos hijos). (NO)
 
 ---
 
@@ -108,7 +108,7 @@ A continuación, se deben crear **dos presupuestos** para cada cliente:
 - 💎 **Presupuesto 1:** Lote premium (vinos más caros y maridajes gourmet).  
 - 🍷 **Presupuesto 2:** Lote económico (productos más asequibles).
 
-Debes confirmar al menos 4 presumiestos y registrarlos como ventas.
+Debes confirmar al menos 2 presupuestos y registrarlos como ventas.
 
 ---
 
