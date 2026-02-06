@@ -1,0 +1,255 @@
+WIZARDS EN ODOO 16 – GUÍA PRÁCTICA (DE CERO A COMPLETO)
+===================================================
+
+Esta guía explica QUÉ es un wizard en Odoo, CUÁNDO usarlo y CÓMO construir uno
+completo paso a paso. El enfoque es práctico, con ejemplos reales y patrones
+reutilizables.
+
+El tono es directo: esto es para aprender a hacer wizards de verdad, no para
+memorizar teoría.
+
+---------------------------------------------------------------------
+
+1) QUÉ ES UN WIZARD EN ODOO
+--------------------------
+
+Un wizard en Odoo es:
+
+- Un modelo temporal (TransientModel)
+- Usado para guiar al usuario en una acción concreta
+- Normalmente se abre en una ventana modal
+- Ejecuta lógica al pulsar botones
+- No guarda datos “definitivos” (Odoo los borra automáticamente)
+
+Piensa en un wizard como:
+“una pantalla intermedia para pensar antes de tocar datos importantes”.
+
+Ejemplos típicos:
+- Confirmaciones
+- Asistentes paso a paso
+- Repartos
+- Importaciones
+- Cierres de procesos
+
+---------------------------------------------------------------------
+
+2) ESTRUCTURA DE ARCHIVOS DE UN WIZARD
+-------------------------------------
+
+Supongamos un módulo llamado `mi_modulo`.
+
+Estructura mínima:
+
+[imagen](https://github.com/canarydev/SGE/blob/main/static/images/UT9/estructura_wizard.png?raw=true)
+
+IDEA CLAVE:
+- models/ → modelos persistentes (datos reales)
+- wizard/ → modelos temporales + vistas del wizard
+- wizard SIEMPRE tiene Python + XML
+
+---------------------------------------------------------------------
+
+3) EJEMPLO BÁSICO: WIZARD DE CONFIRMACIÓN
+----------------------------------------
+
+Caso:
+Tenemos un modelo `mi.pedido`.
+Al confirmar, queremos pedir una nota al usuario.
+
+---------------------------------------------------------------------
+3.1 MODELO PRINCIPAL (models/pedido.py)
+-------------------------------------
+
+from odoo import models, fields, _
+
+class MiPedido(models.Model):
+    _name = "mi.pedido"
+    _description = "Pedido"
+
+    name = fields.Char(required=True)
+    state = fields.Selection(
+        [("draft", "Borrador"), ("confirmed", "Confirmado")],
+        default="draft",
+        required=True
+    )
+    confirm_note = fields.Text(string="Nota de confirmación")
+
+    def action_open_confirm_wizard(self):
+        self.ensure_one()
+        return {
+            "type": "ir.actions.act_window",
+            "name": _("Confirmar pedido"),
+            "res_model": "mi.pedido.confirm.wizard",
+            "view_mode": "form",
+            "target": "new",
+            "context": {
+                "default_pedido_id": self.id,
+            },
+        }
+
+CLAVES:
+- El botón NO confirma directamente
+- Abre un wizard
+- Se pasa el registro activo por contexto
+
+---------------------------------------------------------------------
+3.2 MODELO DEL WIZARD (wizard/pedido_confirm_wizard.py)
+------------------------------------------------------
+
+from odoo import models, fields, _
+from odoo.exceptions import UserError
+
+class MiPedidoConfirmWizard(models.TransientModel):
+    _name = "mi.pedido.confirm.wizard"
+    _description = "Wizard confirmar pedido"
+
+    pedido_id = fields.Many2one(
+        "mi.pedido",
+        string="Pedido",
+        required=True,
+        readonly=True
+    )
+    note = fields.Text(string="Nota", required=True)
+
+    def action_confirm(self):
+        self.ensure_one()
+
+        if self.pedido_id.state != "draft":
+            raise UserError("Solo se pueden confirmar pedidos en borrador.")
+
+        self.pedido_id.write({
+            "state": "confirmed",
+            "confirm_note": self.note,
+        })
+
+        return {"type": "ir.actions.act_window_close"}
+
+CLAVES:
+- Hereda de TransientModel
+- Tiene métodos de botón
+- Toca el modelo REAL (mi.pedido)
+
+---------------------------------------------------------------------
+3.3 VISTA DEL WIZARD (wizard/pedido_confirm_wizard_views.xml)
+------------------------------------------------------------
+
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="view_mi_pedido_confirm_wizard_form" model="ir.ui.view">
+      <field name="name">mi.pedido.confirm.wizard.form</field>
+      <field name="model">mi.pedido.confirm.wizard</field>
+      <field name="arch" type="xml">
+        <form string="Confirmar pedido">
+          <sheet>
+            <field name="pedido_id" invisible="1"/>
+            <group>
+              <field name="note"/>
+            </group>
+          </sheet>
+          <footer>
+            <button name="action_confirm"
+                    type="object"
+                    string="Confirmar"
+                    class="btn-primary"/>
+            <button string="Cancelar"
+                    special="cancel"
+                    class="btn-secondary"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+  </data>
+</odoo>
+
+CLAVES:
+- type="object" → llama a método Python
+- special="cancel" → cierra el wizard
+- Los campos usados en attrs deben estar en la vista
+
+---------------------------------------------------------------------
+
+4) IMPORTS OBLIGATORIOS
+----------------------
+
+__init__.py (raíz):
+
+from . import models
+from . import wizard
+
+models/__init__.py:
+
+from . import pedido
+
+wizard/__init__.py:
+
+from . import pedido_confirm_wizard
+
+Si falta uno de estos imports, Odoo NO verá el wizard.
+
+---------------------------------------------------------------------
+
+5) MANIFEST
+-----------
+
+__manifest__.py debe cargar el XML del wizard:
+
+"data": [
+    "security/ir.model.access.csv",
+    "views/pedido_views.xml",
+    "wizard/pedido_confirm_wizard_views.xml",
+]
+
+El orden importa.
+
+---------------------------------------------------------------------
+
+6) WIZARD COMPLETO (PATRÓN MULTI-PASO)
+-------------------------------------
+
+Para wizards “serios” (trasiegos, repartos, asistentes reales):
+
+PATRÓN RECOMENDADO:
+
+1) Wizard principal
+   - Campos de progreso
+   - Línea actual
+   - Booleano done_all_steps
+
+2) Wizard line (otro TransientModel)
+   - Guarda pasos intermedios
+
+3) Botones:
+   - action_add_step
+   - action_remove_last_step
+   - action_finalize
+
+4) Validaciones:
+   - En wizard (UX)
+   - En modelo final (integridad)
+
+5) Finalizar:
+   - Crear registro real
+   - Abrirlo o cerrar wizard
+
+Este patrón es EXACTAMENTE el que usas en el trasiego.
+
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+
+7) RESUMEN
+-----------
+
+Un wizard en Odoo es:
+
+MODELO TRANSITORIO
++ VISTA MODAL
++ BOTONES DE ACCIÓN
++ LÓGICA PYTHON
++ VALIDACIONES
+
+Si el proceso es simple, un wizard pequeño.
+Si el proceso es complejo, wizard + líneas + estados.
+
+Este patrón escala, es mantenible y es exactamente como se hacen
+los asistentes profesionales en Odoo.
