@@ -16,3 +16,5 @@ Elegir las horas a mostrar en la vista Calendar.
 Integrar sistemas de pago de prueba.
 
 Integrar un mapa en una vista: Dada una dirección, debería aparecer un mapa que indique esa dirección.
+
+Inventario: Comprar unidades de un producto (y para todas sus variantes) a la vez.
